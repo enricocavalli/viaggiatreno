@@ -20,7 +20,11 @@ from=ARGV[0]
 to=ARGV[1]
 
 station=Station.new(from,to)
-station.update()
+
+if station.station_select.size > 0
+	puts station.station_select
+	exit
+end
 
 if ! to
 	puts station 

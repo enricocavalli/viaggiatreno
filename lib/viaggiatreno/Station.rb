@@ -1,20 +1,22 @@
 require_relative 'ScraperStation.rb'
 
 class Station
-	attr_accessor :trains, :stationFrom, :stationTo, :destinations
+	attr_accessor  :stationFrom, :stationTo, :station_select
 	
 def initialize(stationFrom, stationTo = nil)
 	@stationFrom = stationFrom.upcase
 	@stationTo = stationTo.upcase if stationTo
-	@scraper = ScraperStation.new(@stationFrom,@stationTo)
 	@trains = Hash.new()
 	@destinations = Array.new()
+	self.update()
 end
 
 	def update()
-		@scraper.updateStation()
-		@trains=@scraper.trains
-		@destinations=@scraper.destinations.uniq
+		scraper = ScraperStation.new(@stationFrom,@stationTo)
+		scraper.updateStation()
+		@trains=scraper.trains
+		@destinations=scraper.destinations.uniq
+		@station_select=scraper.station_select.uniq
 	end
 
 def to_s
