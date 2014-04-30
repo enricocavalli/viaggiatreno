@@ -13,6 +13,7 @@ class ScraperStation
     @stationTo = stationTo   
     @trains = {}
     @destinations = []
+    @station_select = []
   end
 
   # fetch and parse basic train information (status, trainName, details)
@@ -35,6 +36,10 @@ class ScraperStation
       @trains[train_number]=train_description
       @destinations.push(train_destination)
      ### TODO #### #@trains[train_number][description]=train_description
+    end
+    doc.xpath(XPathMatchInfo.XPATH_STATION_SELECT).each do |x|
+      StringUtils.remove_newlines_tabs_and_spaces(x)
+      @station_select << x.to_s
     end
    end
 end

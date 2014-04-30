@@ -12,6 +12,7 @@ class XPathMatchInfo
 	@@XPATH_TRAIN_NUMBER='h2/text()'
 	@@XPATH_TRAIN_DESTINATION='div/strong[1]/text()'
 	@@XPATH_TRAIN_SCHEDULED='div/strong[2]/text()'
+	@@XPATH_STATION_SELECT='//option/text()'
 
 
 
@@ -27,5 +28,6 @@ class XPathMatchInfo
 	def self.XPATH_TRAIN_NUMBER() @@XPATH_TRAIN_NUMBER end
 	def self.XPATH_TRAIN_DESTINATION() @@XPATH_TRAIN_DESTINATION end
 	def self.XPATH_TRAIN_SCHEDULED() @@XPATH_TRAIN_SCHEDULED end
+	def self.XPATH_STATION_SELECT() @@XPATH_STATION_SELECT end
 end
 
