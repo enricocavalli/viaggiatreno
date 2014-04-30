@@ -6,7 +6,7 @@ require_relative 'XPathMatchInfo'
 require_relative 'ViaggiatrenoURLs'
 
 class ScraperStation
-    attr_accessor :trains, :destinations
+    attr_accessor :trains, :destinations, :station_select
 
   def initialize(stationFrom,stationTo)
     @stationFrom = stationFrom
