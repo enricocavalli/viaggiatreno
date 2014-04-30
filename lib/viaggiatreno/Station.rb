@@ -1,7 +1,7 @@
 require_relative 'ScraperStation.rb'
 
 class Station
-	attr_accessor  :stationFrom, :stationTo, :station_select
+	attr_accessor  :stationFrom, :stationTo, :station_select, :trains
 	
 def initialize(stationFrom, stationTo = nil)
 	@stationFrom = stationFrom.upcase
